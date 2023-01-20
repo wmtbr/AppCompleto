@@ -7,7 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
+import java.sql.Date;
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -53,10 +58,21 @@ public class MainActivity extends AppCompatActivity {
         editSenha = findViewById(R.id.editSenha);
         resultado = findViewById(R.id.resultado);
 
+
+
         String login = editLogin.getText().toString();
         String senha = editSenha.getText().toString();
 
-        resultado.setText( login + senha);
+
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy" + "HH:mm");
+        String formattedDate = df.format(calendar.getTime());
+        int hora = calendar.get(Calendar.HOUR_OF_DAY);
+
+
+
+
+        resultado.setText(login + senha + formattedDate);
         editLogin.setText( "");
         editSenha.setText("");
     }
