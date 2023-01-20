@@ -65,14 +65,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy" + "HH:mm");
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy" +"   "+ "HH:mm");
         String formattedDate = df.format(calendar.getTime());
-        int hora = calendar.get(Calendar.HOUR_OF_DAY);
 
 
 
 
-        resultado.setText(login + senha + formattedDate);
+
+        resultado.setText(login +"    " +senha +"    "+ formattedDate);
         editLogin.setText( "");
         editSenha.setText("");
     }
