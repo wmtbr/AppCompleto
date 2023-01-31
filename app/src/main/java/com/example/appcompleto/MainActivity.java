@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.sql.Date;
 import java.sql.Time;
@@ -75,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
         resultado.setText(login +"    " +senha +"    "+ formattedDate);
         editLogin.setText( "");
         editSenha.setText("");
+
+        Toast.makeText( getApplicationContext(),"Login aceito " , Toast.LENGTH_LONG).show();
     }
 
 }
