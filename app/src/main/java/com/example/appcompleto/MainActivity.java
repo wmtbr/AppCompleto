@@ -1,8 +1,10 @@
 package com.example.appcompleto;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -77,7 +79,29 @@ public class MainActivity extends AppCompatActivity {
         editLogin.setText( "");
         editSenha.setText("");
 
-        Toast.makeText( getApplicationContext(),"Login aceito " , Toast.LENGTH_LONG).show();
+        /*Toast.makeText( getApplicationContext(),"Login aceito " , Toast.LENGTH_LONG).show();
+
+         */
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+
+        dialog.setTitle("TITULO");
+        dialog.setMessage("Mensagem");
+        dialog.setCancelable(false);
+        dialog.setPositiveButton("SIM", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText( getApplicationContext(), "aceito", Toast.LENGTH_SHORT).show();
+            }
+        });
+        dialog.setNegativeButton("NÃO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText( getApplicationContext(), "negado", Toast.LENGTH_SHORT).show();
+            }
+        });
+        dialog.create();
+        dialog.show();
+
     }
 
 }
